@@ -9,7 +9,8 @@ if (!MONGO_URI) {
 mongoose.Promise = global.Promise;
 mongoose.connect(MONGO_URI);
 mongoose.connection
-.once('open', () => console.log('Connected to MongoDB.'))
+.once('openUri', () => console.log('Connected to MongoDB.'))
 .on('error', error => console.log('Error connecting to MongoDB:', error));
 
 module.exports = { mongoose };
+
