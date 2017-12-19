@@ -29,16 +29,12 @@ const SavePerson = new GraphQLObjectType(
                         name,
                         birthDate: new Date(moment(birthDate, 'MM-DD-YYYY').format('YYYY-MM-DD')),
                         role,
+                        sector,
                         phoneNumber,
                         address,
                         cpf
                     });
-                    newPerson.save().then((doc) => {
-                        console.log(doc);
-                        return (doc);
-                    }, (e)=>{
-                        return {error: 'Unable to save'};
-                    });
+                    return newPerson.save()
                 }
             }
         }
