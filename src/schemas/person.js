@@ -4,6 +4,7 @@ import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql';
 const RootResponse = new GraphQLObjectType({
     name: 'RootResponse',
     fields: () => ({
+        _id: { type: GraphQLString },
         name: { type: GraphQLString },
         birthDate: { type: GraphQLString },
         role: { type: GraphQLString },

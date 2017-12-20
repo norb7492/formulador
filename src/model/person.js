@@ -6,7 +6,7 @@ const Person = mongoose.model('Person', {
     name: {
         type: String,
         required: true,
-        trim: true
+        trim: false
     },
     birthDate: {
         type: Date,
