@@ -6,6 +6,8 @@ const RootResponse = new GraphQLObjectType({
     fields: () => ({
         _id: { type: GraphQLString },
         name: { type: GraphQLString },
+        email: { type: GraphQLString },
+        registerDate: { type: GraphQLString },
         birthDate: { type: GraphQLString },
         role: { type: GraphQLString },
         sector: { type: GraphQLString },

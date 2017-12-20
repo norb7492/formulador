@@ -15,6 +15,7 @@ const SavePerson = new GraphQLObjectType(
                 type: RootResponse,
                 args: {
                     name: { type: new GraphQLNonNull(GraphQLString) },
+                    email: { type: new GraphQLNonNull(GraphQLString) },
                     birthDate: { type: GraphQLString },
                     role: { type: GraphQLString },
                     sector: { type: GraphQLString },
@@ -22,11 +23,10 @@ const SavePerson = new GraphQLObjectType(
                     address: { type: GraphQLString },
                     cpf: { type: GraphQLInt }
                 },
-                resolve(parentValue, {name, birthDate, role, sector, phoneNumber, address, cpf}){
-                    console.log(name);
-                    console.log(moment(birthDate, 'MM-DD-YYYY').format('YYYY-MM-DD'))
+                resolve(parentValue, {name, email, birthDate, role, sector, phoneNumber, address, cpf}){
                     const newPerson = new Person({
                         name,
+                        email,
                         birthDate: new Date(moment(birthDate, 'MM-DD-YYYY').format('YYYY-MM-DD')),
                         role,
                         sector,

@@ -1,12 +1,20 @@
 import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
-const Person = mongoose.model('Person', {
+const Person = mongoose.Schema({
 
     name: {
         type: String,
         required: true,
-        trim: false
+        trim: false,
+        uppercase: true
+    },
+    email: {
+        type: String,
+        required: true,
+        trim: true,
+        unique: true,
+        uppercase: true
     },
     birthDate: {
         type: Date,
@@ -21,12 +29,14 @@ const Person = mongoose.model('Person', {
     role: {
         type: String,
         required: false,
-        trim: false
+        trim: false,
+        uppercase: true
     },
     sector: {
         type: String,
         required: false,
-        trim: false
+        trim: false,
+        uppercase: true
     },
     phoneNumber: {
         type: Number,
@@ -36,7 +46,8 @@ const Person = mongoose.model('Person', {
     address: {
         type: String,
         required: false,
-        trim: false
+        trim: false,
+        uppercase: true
     },
     cpf: {
         type: Number,
@@ -45,4 +56,4 @@ const Person = mongoose.model('Person', {
     },
 
 });
-module.exports = { Person };
+module.exports =  { Person: mongoose.model('Person', Person) };

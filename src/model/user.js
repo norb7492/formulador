@@ -1,16 +1,13 @@
 import mongoose from 'mongoose';
 
-const User = mongoose.model('User', {
+const User = mongoose.Schema({
 
-    personID: {
-        type: Schema.Types.ObjectId,
-        required: true,
-        trim: true
-    }, 
     email: {
         type: String,
         required: true,
-        trim: true
+        trim: true,
+        unique: true,
+        uppercase: true
     },
     password: {
         type: String,
@@ -24,4 +21,4 @@ const User = mongoose.model('User', {
     }
 
 });
-module.exports = { User };
+module.exports = { User: mongoose.model('User', User) };
