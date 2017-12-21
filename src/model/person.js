@@ -56,4 +56,4 @@ const Person = mongoose.Schema({
     },
 
 });
-module.exports =  { Person: mongoose.model('Person', Person) };
+module.exports =  { PersonModel: mongoose.model('Person', Person) };
