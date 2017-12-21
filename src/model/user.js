@@ -17,7 +17,8 @@ const User = mongoose.Schema({
     type: {
         type: String,
         required: true,
-        trim: true
+        trim: true,
+        uppercase: true
     }
 
 });
